@@ -1,3 +1,4 @@
+using System.IO;
 using System.Reflection;
 using Application.AutoMapper;
 using Infra.CrossCutting.IoC;
@@ -27,9 +28,10 @@ namespace Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Tiago"));
             });
+            services.AddSwaggerGen();
+
             services.AddAutoMapper(Assembly.GetAssembly(typeof(AutoMapperProfile)));
             RegisterServices(services);
-
             services.AddControllers();
         }
 
@@ -42,7 +44,8 @@ namespace Api
             }
 
             app.UseHttpsRedirection();
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Minha Api v1"));
             app.UseRouting();
 
             app.UseAuthorization();

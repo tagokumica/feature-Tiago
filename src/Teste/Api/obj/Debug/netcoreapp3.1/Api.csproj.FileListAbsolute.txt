@@ -55,3 +55,8 @@ C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\
 C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\obj\Debug\netcoreapp3.1\Api.csproj.CopyComplete
 C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\tiago\OneDrive\Documentos\GitHub\feature-Tiago\src\Teste\Api\obj\Debug\netcoreapp3.1\Api.MvcApplicationPartsAssemblyInfo.cs
