@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "trwgH5ghuCT9TAwvTQAoOupMfcTASQmakFr3YcUedqp4UbBTXOtHyX6ebR6JRAKdAXFsipRwZH3RR46Ma/1I/w==",
+  "dgSpecHash": "58umtJX8bEaNDVOM8SQAdF1ik0YS+OlTW5cWPWoY8bv+9KXBvO9cr1Iwylu7HfzNhI80z9rMTYdDkBxqE5aUDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\tiago\\OneDrive\\Documentos\\GitHub\\feature-Tiago\\src\\Teste\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tiago\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\tiago\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\tiago\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\tiago\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\tiago\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

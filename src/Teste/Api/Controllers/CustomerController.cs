@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Application.Interface;
 using Application.ViewModel;
+using Domain.Interface.Notification;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,13 +10,15 @@ namespace Api.Controllers
 {
     [Route("api/cliente")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class CustomerController : BaseController
     {
         private readonly ICustomerAppService _iCustomerAppService;
+        private readonly INotification _notification;
 
-        public CustomerController(ICustomerAppService iCustomerAppService)
+        public CustomerController(INotification iNotification, ICustomerAppService iCustomerAppService, INotification notification) : base(iNotification)
         {
             _iCustomerAppService = iCustomerAppService;
+            _notification = notification;
         }
 
 
@@ -45,6 +48,8 @@ namespace Api.Controllers
             if (ModelState.IsValid)
             {
                 return _iCustomerAppService.Insert(customerViewModel);
+                
+            
 
             }
 

@@ -3,14 +3,16 @@ using Domain.Interface.Repository;
 using Domain.Interface.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Domain.Interface.Notification;
 
 namespace Domain.Service
 {
-    public class CustomerService: ICustomerService
+    public class CustomerService: BaseService, ICustomerService
     {
         private readonly ICustomerRepository _iCustomerRepository;
 
-        public CustomerService(ICustomerRepository iCustomerRepository)
+        public CustomerService(INotification iNotification, ICustomerRepository iCustomerRepository) : base(iNotification)
         {
             _iCustomerRepository = iCustomerRepository;
         }
@@ -27,6 +29,8 @@ namespace Domain.Service
 
         public Customer FindCustomer(Guid id)
         {
+
+
             return _iCustomerRepository.FindCustomer(id);
         }
 
@@ -47,11 +51,27 @@ namespace Domain.Service
 
         public Customer Insert(Customer customer)
         {
+
+            if (_iCustomerRepository.Search(s =>
+                    s.Email == customer.Email && s.CustomerID != customer.CustomerID).Any())
+                Notify("Já Existe um Email ");
+
+            if (IsValid()) return customer;
+
+
+
             return _iCustomerRepository.Insert(customer);
         }
 
         public Customer Update(Customer customer)
         {
+            if (_iCustomerRepository.Search(s =>
+                s.Email == customer.Email && s.CustomerID != customer.CustomerID).Any())
+                Notify("Já Existe um Email ");
+
+            if (IsValid()) return customer;
+
+
             return _iCustomerRepository.Update(customer);
         }
     }

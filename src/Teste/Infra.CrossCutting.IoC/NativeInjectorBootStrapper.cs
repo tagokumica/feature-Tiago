@@ -1,7 +1,9 @@
 ﻿using Application.Interface;
 using Application.Service;
+using Domain.Interface.Notification;
 using Domain.Interface.Repository;
 using Domain.Interface.Service;
+using Domain.Notification;
 using Domain.Service;
 using Infra.Data.Context;
 using Infra.Data.Repository;
@@ -31,6 +33,7 @@ namespace Infra.CrossCutting.IoC
 
             service.AddScoped<TesteContext>();
             service.AddScoped<IUnitOfWork, UnitOfWork>();
+            service.AddScoped<INotification, Notifications>();
 
 
 

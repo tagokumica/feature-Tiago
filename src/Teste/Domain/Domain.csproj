@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Enum\" />
-    <Folder Include="Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.5.1" />
   </ItemGroup>
 
 </Project>

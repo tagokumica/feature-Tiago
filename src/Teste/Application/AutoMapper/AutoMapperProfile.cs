@@ -11,7 +11,7 @@ namespace Application.AutoMapper
         {
             CreateMap<Customer, CustomerViewModel>()
                 .ForMember(s => s.AddressViewModel, t => t.MapFrom(e => e.Address))
-                .ForMember(s => s.Phone, t => t.MapFrom(e => e.Phone)).ReverseMap();
+                .ForMember(s => s.PhoneViewModel, t => t.MapFrom(e => e.Phone)).ReverseMap();
 
             CreateMap<Phone, PhoneViewModel>().ReverseMap();
 
