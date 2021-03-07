@@ -1,8 +1,8 @@
-﻿using Domain.Interface.Notification;
+﻿using System.Linq;
 using Domain.Interface.Repository;
 using Domain.Service;
-using Domain.Test.Collection.Customer;
-using Domain.Test.Fixture.Customer;
+using Domain.Test.Collection.Address;
+using Domain.Test.Fixture.Address;
 using Moq;
 using Xunit;
 
@@ -19,7 +19,7 @@ namespace Domain.Test.Service
         }
 
         [Fact(DisplayName = "Adicionar Endereço com Sucesso")]
-        [Trait("Categoria", "Endereço Service Mock Tests")]
+        [Trait("Categoria", "Endereço Service  Tests")]
         public void AddressService_Insert_Success()
         {
             // Arrange
@@ -37,7 +37,7 @@ namespace Domain.Test.Service
 
 
         [Fact(DisplayName = "Adicionar Endereço com Falha")]
-        [Trait("Categoria", "Endereço Service Mock Tests")]
+        [Trait("Categoria", "Endereço Service Tests")]
         public void AddressService_Insert_Failed()
         {
             // Arrange
@@ -55,6 +55,26 @@ namespace Domain.Test.Service
         }
 
 
+        [Fact(DisplayName = "Obter Endereço ")]
+        [Trait("Categoria", "Endereço Service Tests")]
+        public void AddressService_GetAll_Return()
+        {
+            // Arrange
+            var addresses = _addressTestFixture.GetAddresses();
+            var addressRepo = new Mock<IAddressRepository>();
+
+            addressRepo.Setup(c => c.GetAll())
+                .Returns(addresses);
+
+            var addressService = new AddressService(addressRepo.Object);
+
+            // Act
+            var address = addressService.GetAll();
+
+            // Assert 
+            addressRepo.Verify(r => r.GetAll(), Times.Once);
+            Assert.True(address.Any());
+        }
 
 
     }

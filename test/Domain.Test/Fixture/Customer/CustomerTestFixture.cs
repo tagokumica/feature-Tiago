@@ -1,6 +1,5 @@
 ﻿using System;
-using Domain.Entities;
-using Xunit.Sdk;
+using System.Collections.Generic;
 
 namespace Domain.Test.Fixture.Customer
 {
@@ -28,6 +27,30 @@ namespace Domain.Test.Fixture.Customer
                     Name = "",
                     Email = ""
                 };
+
+                return customer;
+            }
+            public IEnumerable<Entities.Customer> GetCustomers()
+            {
+
+                var customer = new List<Entities.Customer>
+                {
+                    new Entities.Customer()
+                    {
+                        CustomerID = Guid.NewGuid(),
+                        Name = "Tiago",
+                        Email = "tiago_tanp@teste.com"
+                    },
+
+                    new Entities.Customer()
+                    {
+                        CustomerID = Guid.NewGuid(),
+                        Name = "Diego",
+                        Email = "teste@teste.com"
+
+                    }
+                };
+
 
                 return customer;
             }

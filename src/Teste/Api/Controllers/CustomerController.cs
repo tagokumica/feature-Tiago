@@ -5,7 +5,6 @@ using Application.Interface;
 using Application.ViewModel;
 using Domain.Interface.Notification;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
 {
