@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Application.Interface;
 using Application.ViewModel;
 using Domain.Interface.Notification;
@@ -25,7 +26,11 @@ namespace Api.Controllers
         [HttpGet("listar-cliente")]
         public IEnumerable<CustomerViewModel> GetAll()
         {
-            return _iCustomerAppService.GetAll();
+            var customer = _iCustomerAppService.GetAll();
+            return customer.Select(s => new CustomerViewModel
+            {
+                Name = customer.First().Name
+            });
         }
 
 
@@ -58,7 +63,7 @@ namespace Api.Controllers
         }
 
 
-        [HttpGet("obter-por-id/{id:guid}")]
+        [HttpGet("detalhes/{id:guid}")]
         public ActionResult<CustomerViewModel> FindbyId(Guid id)
         {
 

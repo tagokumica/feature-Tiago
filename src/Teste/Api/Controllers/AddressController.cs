@@ -44,7 +44,7 @@ namespace Api.Controllers
             return CreatedAtAction("GetAll", new List<AddressViewModel>());
         }
 
-        [HttpGet("obter-por-id/{id:guid}")]
+        [HttpGet("detalhes/{id:guid}")]
         public ActionResult<AddressViewModel> FindbyId(Guid id)
         {
 
