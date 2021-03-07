@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.OpenApi.Models;
 namespace Api
 {
     public class Startup
@@ -29,7 +29,6 @@ namespace Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Tiago"));
             });
-            services.AddSwaggerGen();
 
 
             services.AddMvc().AddFluentValidation(fv =>
@@ -42,6 +41,8 @@ namespace Api
             services.AddAutoMapper(Assembly.GetAssembly(typeof(AutoMapperProfile)));
             RegisterServices(services);
             services.AddControllers();
+            services.AddSwaggerGen();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +55,10 @@ namespace Api
 
             app.UseHttpsRedirection();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Minha Api v1"));
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseRouting();
 
             app.UseAuthorization();

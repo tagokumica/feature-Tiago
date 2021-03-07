@@ -10,15 +10,13 @@ namespace Api.Controllers
 {
     [Route("api/cliente")]
     [ApiController]
-    public class CustomerController : BaseController
+    public class CustomerController : ControllerBase
     {
         private readonly ICustomerAppService _iCustomerAppService;
-        private readonly INotification _notification;
 
-        public CustomerController(INotification iNotification, ICustomerAppService iCustomerAppService, INotification notification) : base(iNotification)
+        public CustomerController(ICustomerAppService iCustomerAppService)
         {
             _iCustomerAppService = iCustomerAppService;
-            _notification = notification;
         }
 
 
