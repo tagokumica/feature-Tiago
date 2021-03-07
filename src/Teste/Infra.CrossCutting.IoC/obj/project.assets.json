@@ -1273,6 +1273,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "FluentValidation": "9.5.1",
           "Infra.Data": "1.0.0"
         },
         "compile": {

@@ -9,6 +9,7 @@
       "Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "FluentValidation": "9.5.1",
           "Infra.Data": "1.0.0"
         },
         "runtime": {

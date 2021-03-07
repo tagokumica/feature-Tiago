@@ -1,6 +1,8 @@
 using System.IO;
 using System.Reflection;
 using Application.AutoMapper;
+using Application.ViewModel.Validation;
+using FluentValidation.AspNetCore;
 using Infra.CrossCutting.IoC;
 using Infra.Data.Context;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +31,14 @@ namespace Api
                 options.UseSqlServer(Configuration.GetConnectionString("Tiago"));
             });
             services.AddSwaggerGen();
+
+
+            services.AddMvc().AddFluentValidation(fv =>
+            {
+                fv.RegisterValidatorsFromAssemblyContaining<AddressValidation>()
+                    .RegisterValidatorsFromAssemblyContaining<CustomerValidation>();
+            });
+
 
             services.AddAutoMapper(Assembly.GetAssembly(typeof(AutoMapperProfile)));
             RegisterServices(services);
